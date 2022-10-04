@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('username');
             $table->string('password');
             $table->string('userType');
-            $table->int('isVerified'); // 0 = false , 1 = true
+            $table->integer('isVerified'); // 0 = false , 1 = true
             $table->string('firstname');
             $table->string('activeStatus');
             $table->rememberToken();

@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 
 class MailController extends Controller
 {
+    //1//0e79AIsk0qx7fCgYIARAAGA4SNwF-L9IrmhJN9lhGBzzhbZFqrGosnzYP--BZsJ46mBCjFUPn1XFXG2VJLdeiPqyNza5CWU3YT8Y
 
     private $email;
     private $name;
@@ -39,11 +40,12 @@ class MailController extends Controller
 
     }
     //Sending Email Template
-/* 
-    public function sendcredentials(Request $request){
-        $receiver = $request->email;
-        $name = $request->name;
-        $this->token = session()->get('token'); // Put the generated Code from selected Email
+ 
+ /*    public function sendcredentials($email){
+       
+      $receiver = $email;
+       $name = "Samplemail";
+        $this->token = "1//0e79AIsk0qx7fCgYIARAAGA4SNwF-L9IrmhJN9lhGBzzhbZFqrGosnzYP--BZsJ46mBCjFUPn1XFXG2VJLdeiPqyNza5CWU3YT8Y";
         $mail = new PHPMailer(true);
 
        try {
@@ -61,14 +63,14 @@ class MailController extends Controller
                        'clientId'          => $this->client_id,
                        'clientSecret'      => $this->client_secret,
                        'refreshToken'      => $this->token,
-                       'userName'          => session()->get('email')
+                       'userName'          => "noreply.zcmctelemedicine@gmail.com",
                    ]
                )
            );
 
-           $mail->setFrom(session()->get('email'),session()->get('e_name'));
+           $mail->setFrom("noreply.zcmctelemedicine@gmail.com","Noreply@Telemedicine");
            $mail->addAddress($receiver, $name);
-           $mail->Subject = 'Login Credentials to Medical Clinic WebApp';
+           $mail->Subject = 'Test Email TElemed';
            $mail->CharSet = PHPMailer::CHARSET_UTF8;
            $body = '<!DOCTYPE html>
            <html lang="en">
@@ -93,9 +95,7 @@ class MailController extends Controller
            
            
            
-                   <h4>Email: <span style="font-weight:bold">'.$receiver.'</span>
-                       <br>
-                       Password: <span style="font-weight:bold">'.$receiver.'</span>
+                   <h4>Test mail
            
                    </h4>
            
@@ -117,9 +117,9 @@ class MailController extends Controller
            $mail->msgHTML($body);
            $mail->AltBody = 'This is a plain text message body';
            if( $mail->send() ) {
-            return redirect()->route('superadmin.admin')->with('Success','New Admin was Added Successfully!'); 
+          echo "was sent";
            } else {
-               return redirect()->back()->with('error', 'Unable to send email.');
+              echo "not send";
            }
        } catch(Exception $e) {
            return redirect()->back()->with('error', 'Exception: ' . $e->getMessage());
@@ -128,5 +128,4 @@ class MailController extends Controller
     }
 
  */
-
 }

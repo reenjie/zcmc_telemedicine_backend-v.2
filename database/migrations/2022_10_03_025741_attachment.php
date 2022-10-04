@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('attachment', function (Blueprint $table) {
+        Schema::create('attachments', function (Blueprint $table) {
             $table->id('PK_attachmentId');
             $table->text('file');
             $table->integer('FK_chatId')->nullable();
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attachment');
+        Schema::dropIfExists('attachments');
     }
 };

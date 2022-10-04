@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tele_notification', function (Blueprint $table) {
+        Schema::create('tele_notifications', function (Blueprint $table) {
             $table->id('PK_notificationId');
             $table->integer('active'); // 0 = false , 1 = true
             $table->integer('FK_specialization'); 
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tele_notification');
+        Schema::dropIfExists('tele_notifications');
     }
 };
